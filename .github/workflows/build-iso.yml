@@ -25,8 +25,15 @@ jobs:
           sudo apt-get install -y \
             ca-certificates \
             debian-archive-keyring \
+            gnupg
+          echo "deb http://deb.debian.org/debian trixie main contrib non-free-firmware" | sudo tee /etc/apt/sources.list.d/debian-trixie.list
+          printf 'Package: *\nPin: release n=trixie\nPin-Priority: 100\n\nPackage: live-build debootstrap debian-archive-keyring\nPin: release n=trixie\nPin-Priority: 990\n' | sudo tee /etc/apt/preferences.d/obscura-debian-live-build
+          sudo apt-get update
+          sudo apt-get install -y -t trixie \
             live-build \
             debootstrap \
+            debian-archive-keyring
+          sudo apt-get install -y \
             squashfs-tools \
             xorriso \
             isolinux \
