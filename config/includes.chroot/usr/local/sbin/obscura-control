@@ -7,27 +7,26 @@ usage() {
 
 case "${1:-}" in
   status)
-    systemctl --no-pager status i2p nginx nftables
+    systemctl --no-pager status i2pd nginx nftables
     ;;
   start)
-    systemctl start i2p nginx
+    systemctl start i2pd nginx
     ;;
   stop)
-    systemctl stop nginx i2p
+    systemctl stop nginx i2pd
     ;;
   restart)
-    systemctl restart i2p nginx
+    systemctl restart i2pd nginx
     ;;
   lockdown)
     systemctl restart nftables
     sysctl --system
     ;;
   eepsite-address)
-    echo "Open the I2P tunnel manager: http://127.0.0.1:7657/i2ptunnelmgr"
+    echo "Open the i2pd web console: http://127.0.0.1:7070/"
     ;;
   *)
     usage
     exit 1
     ;;
 esac
-

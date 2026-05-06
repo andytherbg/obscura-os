@@ -18,10 +18,9 @@ systemctl enable nftables
 systemctl enable apparmor
 systemctl enable NetworkManager
 systemctl enable nginx
-systemctl enable i2p || true
+systemctl enable i2pd || true
 
 systemctl disable avahi-daemon 2>/dev/null || true
 systemctl disable cups 2>/dev/null || true
 systemctl disable bluetooth 2>/dev/null || true
 systemctl disable tor 2>/dev/null || true
-

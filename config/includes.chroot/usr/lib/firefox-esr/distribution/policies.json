@@ -8,7 +8,7 @@
     "DontCheckDefaultBrowser": true,
     "NoDefaultBookmarks": true,
     "Homepage": {
-      "URL": "http://127.0.0.1:7657/",
+      "URL": "http://127.0.0.1:7070/",
       "Locked": true,
       "StartPage": "homepage"
     },
@@ -29,4 +29,3 @@
     }
   }
 }
-

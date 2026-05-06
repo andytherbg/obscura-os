@@ -15,7 +15,7 @@ This is enforced with `nftables`, not by asking each application to behave.
 
 | Service | Address |
 | --- | --- |
-| I2P router console | `127.0.0.1:7657` |
+| i2pd web console | `127.0.0.1:7070` |
 | I2P HTTP proxy | `127.0.0.1:4444` |
 | I2P HTTPS proxy | `127.0.0.1:4445` |
 | I2P IRC tunnel | `127.0.0.1:6668` |
@@ -32,4 +32,3 @@ Nginx serves `/var/www/eepsite` on `127.0.0.1:8080`. I2P tunnel publication is m
 ## Updates
 
 Normal user applications cannot reach Debian repositories while lockdown is active. Production releases should use signed ISO updates or a carefully designed maintenance mode.
-

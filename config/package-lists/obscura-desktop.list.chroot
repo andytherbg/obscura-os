@@ -12,9 +12,7 @@ cryptsetup-initramfs
 network-manager
 macchanger
 rfkill
-default-jre-headless
-i2p
-i2p-router
+i2pd
 nginx-light
 git
 python3
@@ -25,4 +23,3 @@ xfce4-terminal
 firefox-esr
 hexchat
 mousepad
-

@@ -15,7 +15,7 @@ Obscura OS is designed to reduce accidental clearnet leaks. It is not a guarante
 
 ## Audit Priorities
 
-1. Confirm Java I2P runs as `i2psvc` on every boot path.
+1. Confirm i2pd runs under the intended service account on every boot path.
 2. Confirm live-build package scripts do not re-enable unwanted services.
 3. Test browser DNS and WebRTC behavior.
 4. Test installed-system behavior, not only live boot behavior.
@@ -41,4 +41,3 @@ sudo -u i2psvc curl --connect-timeout 5 https://i2p.net/
 ```
 
 This may succeed because the I2P router account is allowed underlay access.
-
