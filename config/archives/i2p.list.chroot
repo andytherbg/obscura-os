@@ -1,2 +1,0 @@
-deb [signed-by=/etc/apt/trusted.gpg.d/i2p.gpg.key.chroot.gpg] https://deb.i2p.net/ trixie main
-
