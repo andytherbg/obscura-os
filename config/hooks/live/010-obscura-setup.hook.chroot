@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! id i2psvc >/dev/null 2>&1; then
+  useradd --system --home /var/lib/i2p --shell /usr/sbin/nologin i2psvc
+fi
+
+install -d -o i2psvc -g i2psvc /var/lib/i2p
+install -d -o www-data -g www-data /var/www/eepsite
+
+chmod 0755 /usr/local/sbin/obscura-control
+chmod 0644 /etc/nftables.conf
+
+ln -sf /etc/nginx/sites-available/eepsite /etc/nginx/sites-enabled/eepsite
+rm -f /etc/nginx/sites-enabled/default
+
+systemctl enable nftables
+systemctl enable apparmor
+systemctl enable NetworkManager
+systemctl enable nginx
+systemctl enable i2p || true
+
+systemctl disable avahi-daemon 2>/dev/null || true
+systemctl disable cups 2>/dev/null || true
+systemctl disable bluetooth 2>/dev/null || true
+systemctl disable tor 2>/dev/null || true
+

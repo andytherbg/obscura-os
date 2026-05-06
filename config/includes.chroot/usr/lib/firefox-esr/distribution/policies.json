@@ -1,0 +1,32 @@
+{
+  "policies": {
+    "DisableTelemetry": true,
+    "DisableFirefoxStudies": true,
+    "DisablePocket": true,
+    "DisableFirefoxAccounts": true,
+    "DisableSetDesktopBackground": true,
+    "DontCheckDefaultBrowser": true,
+    "NoDefaultBookmarks": true,
+    "Homepage": {
+      "URL": "http://127.0.0.1:7657/",
+      "Locked": true,
+      "StartPage": "homepage"
+    },
+    "Preferences": {
+      "network.proxy.type": { "Value": 1, "Status": "locked" },
+      "network.proxy.http": { "Value": "127.0.0.1", "Status": "locked" },
+      "network.proxy.http_port": { "Value": 4444, "Status": "locked" },
+      "network.proxy.ssl": { "Value": "127.0.0.1", "Status": "locked" },
+      "network.proxy.ssl_port": { "Value": 4445, "Status": "locked" },
+      "network.proxy.no_proxies_on": { "Value": "127.0.0.1,localhost", "Status": "locked" },
+      "media.peerconnection.enabled": { "Value": false, "Status": "locked" },
+      "media.peerConnection.ice.proxy_only": { "Value": true, "Status": "locked" },
+      "keyword.enabled": { "Value": false, "Status": "locked" },
+      "browser.fixup.domainsuffixwhitelist.i2p": { "Value": true, "Status": "locked" },
+      "network.dns.disableIPv6": { "Value": true, "Status": "locked" },
+      "privacy.resistFingerprinting": { "Value": true, "Status": "locked" },
+      "privacy.trackingprotection.enabled": { "Value": true, "Status": "locked" }
+    }
+  }
+}
+

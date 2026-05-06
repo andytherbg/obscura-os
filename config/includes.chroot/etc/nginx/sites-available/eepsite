@@ -1,0 +1,8 @@
+server {
+    listen 127.0.0.1:8080;
+    root /var/www/eepsite;
+    index index.html;
+    access_log off;
+    error_log /var/log/nginx/eepsite-error.log crit;
+}
+

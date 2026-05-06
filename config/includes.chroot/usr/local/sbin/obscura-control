@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  echo "usage: obscura-control {status|start|stop|restart|lockdown|eepsite-address}"
+}
+
+case "${1:-}" in
+  status)
+    systemctl --no-pager status i2p nginx nftables
+    ;;
+  start)
+    systemctl start i2p nginx
+    ;;
+  stop)
+    systemctl stop nginx i2p
+    ;;
+  restart)
+    systemctl restart i2p nginx
+    ;;
+  lockdown)
+    systemctl restart nftables
+    sysctl --system
+    ;;
+  eepsite-address)
+    echo "Open the I2P tunnel manager: http://127.0.0.1:7657/i2ptunnelmgr"
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
+
