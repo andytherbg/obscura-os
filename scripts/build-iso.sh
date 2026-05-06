@@ -24,6 +24,8 @@ lb config \
   --debian-installer live \
   --bootappend-live "boot=live components quiet apparmor=1 security=apparmor"
 
+./scripts/fetch-i2p-packages.py
+
 lb build 2>&1 | tee obscura-build.log
 
 ISO="$(find . -maxdepth 1 -name 'live-image-*.iso' -o -name 'live-image-*.hybrid.iso' | head -n 1)"

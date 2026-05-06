@@ -6,6 +6,7 @@
 /config/bootstrap
 /config/chroot
 /config/common
+/config/packages.chroot/
 /config/source
 /live-image-*.contents
 /live-image-*.files
