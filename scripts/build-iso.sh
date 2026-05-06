@@ -19,6 +19,7 @@ lb config \
   --mirror-bootstrap "http://deb.debian.org/debian/" \
   --mirror-chroot "http://deb.debian.org/debian/" \
   --mirror-binary "http://deb.debian.org/debian/" \
+  --security false \
   --binary-images iso-hybrid \
   --debian-installer live \
   --bootappend-live "boot=live components quiet apparmor=1 security=apparmor"
