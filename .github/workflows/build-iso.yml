@@ -13,6 +13,7 @@ jobs:
   build:
     name: Build desktop ISO
     runs-on: ubuntu-24.04
+    container: debian:trixie
     timeout-minutes: 120
 
     steps:
@@ -21,8 +22,10 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
+          apt-get update
+          apt-get install -y \
+            ca-certificates \
+            debian-archive-keyring \
             live-build \
             debootstrap \
             squashfs-tools \
@@ -34,7 +37,7 @@ jobs:
             mtools
 
       - name: Build ISO
-        run: sudo ./scripts/build-iso.sh
+        run: ./scripts/build-iso.sh
 
       - name: Upload ISO artifact
         uses: actions/upload-artifact@v4
@@ -58,4 +61,3 @@ jobs:
             Developer preview of Obscura OS.
 
             This image is intended for testing and review. Do not rely on it for high-risk anonymity until the firewall, browser profile, and install path have been independently audited.
-
