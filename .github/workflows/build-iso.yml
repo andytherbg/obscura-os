@@ -13,7 +13,6 @@ jobs:
   build:
     name: Build desktop ISO
     runs-on: ubuntu-24.04
-    container: debian:trixie
     timeout-minutes: 120
 
     steps:
@@ -22,8 +21,8 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          apt-get update
-          apt-get install -y \
+          sudo apt-get update
+          sudo apt-get install -y \
             ca-certificates \
             debian-archive-keyring \
             live-build \
@@ -37,7 +36,7 @@ jobs:
             mtools
 
       - name: Build ISO
-        run: ./scripts/build-iso.sh
+        run: sudo ./scripts/build-iso.sh
 
       - name: Upload ISO artifact
         uses: actions/upload-artifact@v4

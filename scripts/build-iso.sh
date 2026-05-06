@@ -12,9 +12,13 @@ cd "${PROJECT_ROOT}"
 lb clean
 
 lb config \
+  --mode debian \
   --distribution trixie \
   --archive-areas "main contrib non-free-firmware" \
   --architectures amd64 \
+  --mirror-bootstrap "http://deb.debian.org/debian/" \
+  --mirror-chroot "http://deb.debian.org/debian/" \
+  --mirror-binary "http://deb.debian.org/debian/" \
   --binary-images iso-hybrid \
   --debian-installer live \
   --bootappend-live "boot=live components quiet apparmor=1 security=apparmor"
@@ -32,4 +36,3 @@ else
   echo "Build completed, but no ISO was found." >&2
   exit 1
 fi
-
