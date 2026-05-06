@@ -19,31 +19,28 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Install build dependencies
+      - name: Build ISO in Debian
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            ca-certificates \
-            debian-archive-keyring \
-            gnupg
-          echo "deb [trusted=yes] http://deb.debian.org/debian trixie main contrib non-free-firmware" | sudo tee /etc/apt/sources.list.d/debian-trixie.list
-          printf 'Package: *\nPin: release n=trixie\nPin-Priority: 100\n\nPackage: live-build debootstrap debian-archive-keyring\nPin: release n=trixie\nPin-Priority: 990\n' | sudo tee /etc/apt/preferences.d/obscura-debian-live-build
-          sudo apt-get update
-          sudo apt-get install -y -t trixie \
-            live-build \
-            debootstrap \
-            debian-archive-keyring
-          sudo apt-get install -y \
-            squashfs-tools \
-            xorriso \
-            isolinux \
-            syslinux-common \
-            grub-pc-bin \
-            grub-efi-amd64-bin \
-            mtools
-
-      - name: Build ISO
-        run: sudo ./scripts/build-iso.sh
+          docker run --rm --privileged \
+            -v "$PWD:/work" \
+            -w /work \
+            debian:trixie \
+            bash -lc '
+              apt-get update
+              apt-get install -y \
+                ca-certificates \
+                debian-archive-keyring \
+                live-build \
+                debootstrap \
+                squashfs-tools \
+                xorriso \
+                isolinux \
+                syslinux-common \
+                grub-pc-bin \
+                grub-efi-amd64-bin \
+                mtools
+              ./scripts/build-iso.sh
+            '
 
       - name: Upload ISO artifact
         uses: actions/upload-artifact@v4
