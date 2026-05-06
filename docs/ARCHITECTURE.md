@@ -15,7 +15,7 @@ This is enforced with `nftables`, not by asking each application to behave.
 
 | Service | Address |
 | --- | --- |
-| i2pd web console | `127.0.0.1:7070` |
+| I2P router console | `127.0.0.1:7657` |
 | I2P HTTP proxy | `127.0.0.1:4444` |
 | I2P HTTPS proxy | `127.0.0.1:4445` |
 | I2P IRC tunnel | `127.0.0.1:6668` |

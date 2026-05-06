@@ -12,7 +12,7 @@ The design goal is simple:
 
 ## Editions
 
-- `desktop`: XFCE, Firefox ESR locked to I2P proxy, i2pd router, local eepsite hosting, HexChat.
+- `desktop`: XFCE, Firefox ESR locked to I2P proxy, Java I2P, I2PSnark, local eepsite hosting, HexChat.
 - `core`: planned headless node image.
 
 ## Quick Build
@@ -43,7 +43,7 @@ When pushed to GitHub:
 
 Obscura OS uses `nftables` default-deny outbound filtering. Only the dedicated `i2psvc` account is allowed to initiate outbound TCP/UDP connections. User applications must use local I2P services:
 
-- i2pd web console: `http://127.0.0.1:7070/`
+- I2P router console: `http://127.0.0.1:7657/`
 - I2P HTTP proxy: `127.0.0.1:4444`
 - I2P HTTPS proxy: `127.0.0.1:4445`
 - I2P IRC tunnel: `127.0.0.1:6668`

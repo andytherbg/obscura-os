@@ -15,7 +15,7 @@ Obscura OS is designed to reduce accidental clearnet leaks. It is not a guarante
 
 ## Audit Priorities
 
-1. Confirm i2pd runs under the intended service account on every boot path.
+1. Confirm Java I2P runs under the intended service account on every boot path.
 2. Confirm live-build package scripts do not re-enable unwanted services.
 3. Test browser DNS and WebRTC behavior.
 4. Test installed-system behavior, not only live boot behavior.

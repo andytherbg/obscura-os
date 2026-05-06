@@ -12,7 +12,9 @@ cryptsetup-initramfs
 network-manager
 macchanger
 rfkill
-i2pd
+default-jre-headless
+i2p
+i2p-keyring
 nginx-light
 git
 python3
